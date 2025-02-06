@@ -1,4 +1,16 @@
+import Modal from "./Modal.jsx";
+
 const EmployeeForm = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleSave = () => {
+    setShowModal(true);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
+
   return (
     <div className="container">
       <h2>Create Employee</h2>
@@ -41,7 +53,11 @@ const EmployeeForm = () => {
         </select>
       </form>
 
-      <button>Save</button>
+      <button onClick={handleSave}>Save</button>
+
+      <Modal show={showModal} onClose={handleClose}>
+        Employee Created!
+      </Modal>
     </div>
   );
 };
