@@ -1,4 +1,5 @@
 import Modal from "./Modal.jsx";
+import { useState } from "react";
 
 const EmployeeForm = () => {
   const [showModal, setShowModal] = useState(false);
