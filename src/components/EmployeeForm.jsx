@@ -25,12 +25,19 @@ const EmployeeForm = ({ onAddEmployee }) => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const handleSelectChange = (name, value) => {
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
   const handleSave = () => {
     const newEmployee = {
       ...formData,
       dateOfBirth: dateOfBirth ? dateOfBirth.toISOString().split("T")[0] : "",
       startDate: startDate ? startDate.toISOString().split("T")[0] : "",
     };
+    const employees = JSON.parse(localStorage.getItem("employees")) || [];
+    employees.push(newEmployee);
+    localStorage.setItem("employees", JSON.stringify(employees));
     onAddEmployee(newEmployee);
     setShowModal(true);
   };
@@ -43,21 +50,25 @@ const EmployeeForm = ({ onAddEmployee }) => {
     <div className="container">
       <h2>Create Employee</h2>
       <form id="create-employee">
-        <label htmlFor="first-name">First Name</label>
-        <input
-          type="text"
-          id="first-name"
-          name="firstName"
-          onChange={handleChange}
-        />
+        <div className="form_inputs">
+          <label htmlFor="first-name">First Name</label>
+          <input
+            type="text"
+            id="first-name"
+            name="firstName"
+            onChange={handleChange}
+          />
+        </div>
 
-        <label htmlFor="last-name">Last Name</label>
-        <input
-          type="text"
-          id="last-name"
-          name="lastName"
-          onChange={handleChange}
-        />
+        <div className="form_inputs">
+          <label htmlFor="last-name">Last Name</label>
+          <input
+            type="text"
+            id="last-name"
+            name="lastName"
+            onChange={handleChange}
+          />
+        </div>
 
         <MyDatePicker
           label="Date of Birth"
@@ -93,9 +104,8 @@ const EmployeeForm = ({ onAddEmployee }) => {
           <SelectMenu
             options={statesUSA}
             placeholder="Select a state"
-            onChange={(value) =>
-              setFormData((prevData) => ({ ...prevData, state: value }))
-            }
+            label="States"
+            onChange={(value) => handleSelectChange("state", value)}
           />
 
           <label htmlFor="zip-code">Zip Code</label>
@@ -107,14 +117,15 @@ const EmployeeForm = ({ onAddEmployee }) => {
           />
         </fieldset>
 
-        <label htmlFor="department">Department</label>
-        <SelectMenu
-          options={departments}
-          placeholder="Select a department"
-          onChange={(value) =>
-            setFormData((prevData) => ({ ...prevData, department: value }))
-          }
-        />
+        <div className="form_inputs">
+          <label htmlFor="department">Department</label>
+          <SelectMenu
+            options={departments}
+            placeholder="Select a department"
+            label="Departments"
+            onChange={(value) => handleSelectChange("department", value)}
+          />
+        </div>
       </form>
 
       <button onClick={handleSave} className="save_btn">

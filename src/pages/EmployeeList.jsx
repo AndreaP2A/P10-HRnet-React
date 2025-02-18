@@ -1,17 +1,55 @@
+import { useEffect, useState } from "react";
 import DataTable from "../components/DataTable";
+import { createColumnHelper } from "@tanstack/react-table";
 import PropTypes from "prop-types";
 
-const EmployeeList = ({ employees }) => {
+const columnHelper = createColumnHelper();
+
+const EmployeeList = () => {
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    const storedEmployees = JSON.parse(localStorage.getItem("employees")) || [];
+    setEmployees(storedEmployees);
+  }, []);
+
   const columns = [
-    { Header: "First Name", accessor: "firstName", id: "firstName" },
-    { Header: "Last Name", accessor: "lastName", id: "lastName" },
-    { Header: "Start Date", accessor: "startDate", id: "startDate" },
-    { Header: "Department", accessor: "department", id: "department" },
-    { Header: "Date of Birth", accessor: "dateOfBirth", id: "dateOfBirth" },
-    { Header: "Street", accessor: "street", id: "street" },
-    { Header: "City", accessor: "city", id: "city" },
-    { Header: "State", accessor: "state", id: "state" },
-    { Header: "Zip Code", accessor: "zipCode", id: "zipCode" },
+    columnHelper.accessor("firstName", {
+      header: "First Name",
+      id: "firstName",
+    }),
+    columnHelper.accessor("lastName", {
+      header: "Last Name",
+      id: "lastName",
+    }),
+    columnHelper.accessor("startDate", {
+      header: "Start Date",
+      id: "startDate",
+    }),
+    columnHelper.accessor("department", {
+      header: "Department",
+      id: "department",
+    }),
+    columnHelper.accessor("dateOfBirth", {
+      header: "Date of Birth",
+      id: "dateOfBirth",
+    }),
+    columnHelper.accessor("street", {
+      header: "Street",
+      id: "street",
+    }),
+    columnHelper.accessor("city", {
+      header: "City",
+      id: "city",
+    }),
+    columnHelper.accessor("state", {
+      header: "State",
+      id: "state",
+    }),
+    columnHelper.accessor("zipCode", {
+      header: "Zip Code",
+      id: "zipCode",
+    }),
   ];
 
   return (

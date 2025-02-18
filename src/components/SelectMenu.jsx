@@ -9,9 +9,9 @@ import {
 import PropTypes from "prop-types";
 import "../index.css";
 
-const SelectMenu = ({ options, placeholder }) => (
-  <Select.Root>
-    <Select.Trigger className="SelectTrigger" aria-label="State">
+const SelectMenu = ({ options, placeholder, label, onChange }) => (
+  <Select.Root onValueChange={onChange}>
+    <Select.Trigger className="SelectTrigger" aria-label={label}>
       <Select.Value placeholder={placeholder} />
       <Select.Icon className="SelectIcon">
         <ChevronDownIcon />
@@ -24,7 +24,7 @@ const SelectMenu = ({ options, placeholder }) => (
         </Select.ScrollUpButton>
         <Select.Viewport className="SelectViewport">
           <Select.Group>
-            <Select.Label className="SelectLabel">States</Select.Label>
+            <Select.Label className="SelectLabel">{label}</Select.Label>
             {options.map((option) => (
               <SelectItem key={option.value} value={option.value}>
                 {option.label}
@@ -70,6 +70,8 @@ SelectMenu.propTypes = {
     })
   ).isRequired,
   placeholder: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default SelectMenu;

@@ -43,7 +43,11 @@ export function MyDatePicker({
   ].filter(Boolean);
 
   return (
-    <div style={{ position: "relative" }} ref={datePickerRef}>
+    <div
+      className="datepicker"
+      style={{ position: "relative" }}
+      ref={datePickerRef}
+    >
       <label>{label}</label>
       <input
         type="text"

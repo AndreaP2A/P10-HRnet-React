@@ -48,8 +48,10 @@ const DataTable = ({ columns, data }) => {
 DataTable.propTypes = {
   columns: PropTypes.arrayOf(
     PropTypes.shape({
-      Header: PropTypes.string.isRequired,
-      accessor: PropTypes.string.isRequired,
+      header: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+        .isRequired,
+      accessorKey: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
+        .isRequired,
       id: PropTypes.string.isRequired,
     })
   ).isRequired,
