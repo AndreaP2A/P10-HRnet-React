@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./HRNet/src/assets/img/wealth_health_logo.png" alt="Logo Wealth Health">
+    <img src="./src/assets/img/wealth_health_logo.png" alt="Logo Wealth Health">
     <h3 align="center">HRNet - Wealth Health HR Internal App</h3>
     <p align="center">HRNet est une application web interne de la firme Wealth Health qui permet la gestion des dossiers des employés.</p>
 </div>
