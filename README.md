@@ -39,4 +39,5 @@ A venir !
 
 andrea.porche2a@gmail.com
 
-Lien du repo: [https://github.com/AndreaP2A/P10-HRnet](https://github.com/AndreaP2A/P10-HRnet)
+Lien du repo: [https://github.com/AndreaP2A/P10-HRnet-React](https://github.com/AndreaP2A/P10-HRnet-React)
+Lien forké du repo de l'application jQuery: [https://github.com/AndreaP2A/P10-HRnet](https://github.com/AndreaP2A/P10-HRnet)
