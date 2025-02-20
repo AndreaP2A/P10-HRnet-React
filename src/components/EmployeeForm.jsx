@@ -133,7 +133,7 @@ const EmployeeForm = ({ onAddEmployee }) => {
       </button>
 
       <Modal show={showModal} onClose={handleClose}>
-        Employee Created!
+        Employee Created !
       </Modal>
     </div>
   );

@@ -27,6 +27,7 @@ body {
   justify-content: center;
   gap: 20px;
   padding: 20px;
+  border: none;
 }
 
 form {
@@ -71,6 +72,7 @@ label {
   position: absolute;
   z-index: 1000;
   background: white;
+  border-radius: 5px;
   border: 1px solid #ccc;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -80,6 +82,26 @@ label {
 }
 .datepicker input {
   width: 100%;
+}
+
+.rdp-root {
+  padding: 15px;
+}
+
+.rdp-nav button svg,
+.rdp-caption_label svg {
+  fill: #5e6f21;
+}
+
+.rdp-today button {
+  background-color: #5e6f21;
+  color: white;
+  font-weight: 700;
+}
+
+.rdp-footer {
+  margin-top: 10px;
+  font-style: italic;
 }
 
 .save_btn {
@@ -192,4 +214,190 @@ button {
   height: 25px;
   background-color: white;
   cursor: default;
+}
+
+/*///////////////////////////////////////////////////
+//////////////////// TABLE /////////////////////////
+///////////////////////////////////////////////////*/
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+.table thead tr {
+  background-color: #5e6f21;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+  border-bottom: 2px solid #5e6f21;
+}
+
+.table tbody tr:hover {
+  background-color: #98ac3b;
+  color: white;
+}
+
+/* Table Controls */
+.table-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.entries-per-page {
+  display: flex;
+  align-items: center;
+}
+
+.entries-per-page select {
+  margin-left: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #5e6f21;
+}
+
+.search-bar input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #5e6f21;
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+.table thead tr {
+  background-color: #5e6f21;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+.table th,
+.table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+  border-bottom: 2px solid #5e6f21;
+}
+
+.table tbody tr:hover {
+  background-color: #98ac3b;
+  color: white;
+}
+
+.sort-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+  color: white;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #5e6f21;
+  background-color: #5e6f21;
+  color: white;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/*///////////////////////////////////////////////////
+//////////////////// MODAL /////////////////////////
+///////////////////////////////////////////////////*/
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  gap: 20px;
+}
+
+.modal-close-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5e6f21;
+  color: white;
+  cursor: pointer;
+  width: 20%;
+}
+
+.modal-close-btn:hover {
+  background-color: #98ac3b;
 }
