@@ -4,7 +4,7 @@ import SelectMenu from "./SelectMenu.jsx";
 import statesUSA from "../data/statesUSA.js";
 import departments from "../data/departments.js";
 import PropTypes from "prop-types";
-import { Modal } from "modal-window-ap2a";
+import Modal from "modal-window-ap2a";
 
 const EmployeeForm = ({ onAddEmployee }) => {
   const [showModal, setShowModal] = useState(false);
