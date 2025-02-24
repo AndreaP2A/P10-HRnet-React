@@ -15,6 +15,34 @@ Ce projet m'a amené à travailler sur :
 - La résolution d'un problème ([issue GitHub](https://github.com/OpenClassrooms-Student-Center/P12_Front-end/issues/3)) soulevé en interne : production d'un CSS épuré permettant la customisation globale du composant avec exemples
 - L'analyse de la performance d'une application web via Lighthouse
 
+## Installation
+
+Vous souhaitez tester HRnet ? Il vous suffit de :
+
+1. **Clone the repository**:
+
+```sh
+git clone https://github.com/AndreaP2A/P10-HRnet-React.git
+```
+
+2. **Navigate to the project directory**
+
+```sh
+cd P10-HRnet-React
+```
+
+3. **Install the dependencies (modal-window-ap2a is included)**
+
+```sh
+npm install
+```
+
+4. **Start the development server**
+
+```sh
+npm run dev
+```
+
 ## Technologies utilisées
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -52,13 +80,11 @@ npm update modal-window-ap2a
 - Être redirigé vers la page listant les employés en cliquant sur le lien approprié
 - Consulter la liste des employés agencée dans un tableau avec pagination, barre de recherche et filtres
 
-## Site en ligne
+## Liens utiles
 
-A venir !
+Lien du repo: [https://github.com/AndreaP2A/P10-HRnet-React](https://github.com/AndreaP2A/P10-HRnet-React)
+Lien forké du repo de l'application d'origine, utilisant jQuery: [https://github.com/AndreaP2A/P10-HRnet](https://github.com/AndreaP2A/P10-HRnet)
 
 ## Contact
 
 andrea.porche2a@gmail.com
-
-Lien du repo: [https://github.com/AndreaP2A/P10-HRnet-React](https://github.com/AndreaP2A/P10-HRnet-React)
-Lien forké du repo de l'application d'origine, utilisant jQuery: [https://github.com/AndreaP2A/P10-HRnet](https://github.com/AndreaP2A/P10-HRnet)
