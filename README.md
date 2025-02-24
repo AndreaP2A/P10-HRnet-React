@@ -43,7 +43,7 @@ npm update modal-window-ap2a
 
 - DataTable : [:atom_symbol: Tanstack Table](https://tanstack.com/table/latest) :arrow_right: remplace l'ancien [plugin de tableau de données](https://github.com/DataTables/DataTables)
 - SelectMenu : [:atom_symbol: Radix UI - Select](https://www.radix-ui.com/primitives/docs/components/select) remplace l'ancien [plugin de menu déroulant](https://github.com/jquery/jquery-ui/blob/master/ui/widgets/selectmenu.js)
-- DatePicker : [:atom_symbol: React DayPicker](https://daypicker.dev/) :arrow_right: remplace l'ancien [plugin pour les tables de données](https://github.com/xdan/datetimepicker)
+- DatePicker : [:atom_symbol: React DayPicker](https://daypicker.dev/) :arrow_right: remplace l'ancien [plugin de sélecteur de date](https://github.com/xdan/datetimepicker)
 
 ## En tant qu'utilisateur d'HRnet, je dois pouvoir ...
 
