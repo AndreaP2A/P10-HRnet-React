@@ -10,12 +10,14 @@ import PropTypes from "prop-types";
  * @param {string} [props.type="text"] - The type attribute for the input element.
  * @param {function} props.onChange - The function to call when the input value changes.
  */
-const TextInput = ({ label, id, name, type = "text", onChange }) => (
-  <div className="form__inputs">
-    <label htmlFor={id}>{label}</label>
-    <input type={type} id={id} name={name} onChange={onChange} />
-  </div>
-);
+const TextInput = ({ label, id, name, type = "text", onChange }) => {
+  return (
+    <div className="form__inputs">
+      <label htmlFor={id}>{label}</label>
+      <input type={type} id={id} name={name} onChange={onChange} />
+    </div>
+  );
+};
 
 TextInput.propTypes = {
   label: PropTypes.string.isRequired,
