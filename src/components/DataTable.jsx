@@ -130,7 +130,7 @@ const DataTable = ({ columns, data }) => {
           Page{" "}
           <strong>
             {table.getState().pagination.pageIndex + 1} of{" "}
-            {table.getPageCount()}
+            {table.getPageCount() > 0 ? table.getPageCount() : 1}
           </strong>
         </span>
         <button
