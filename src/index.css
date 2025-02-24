@@ -14,6 +14,17 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  height: 100%;
+}
+
+/* ================================
+   Backgrounds
+   ================================ */
+
+.home__container,
+.list__container {
+  background: url("./assets/img/bg.webp") no-repeat center center fixed;
+  background-size: cover;
 }
 
 /* ================================
@@ -30,7 +41,10 @@ body {
    Container
    ================================ */
 .main,
-.container {
+.container,
+.list__main,
+.home__main,
+.create__employee--form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,6 +52,11 @@ body {
   gap: 20px;
   padding: 20px;
   border: none;
+}
+
+.list__main {
+  width: 100%;
+  padding: 20px 50px;
 }
 
 /* ================================
@@ -256,14 +275,37 @@ button {
 }
 
 /* ================================
+   Return Link
+   ================================ */
+
+.return__link {
+  display: flex;
+  align-items: center;
+  color: #5e6f21;
+  text-decoration: none;
+  padding: 30px 0 10px 50px;
+}
+
+.return__link--icon {
+  margin-right: 8px;
+  color: #5e6f21;
+}
+
+/* ================================
    Data Table
    ================================ */
+.table__container {
+  width: 100%;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
   font-size: 18px;
   text-align: left;
+  border-radius: 10px; /* Add border radius to the table */
+  overflow: hidden; /* Ensure the border radius is applied */
 }
 
 .table thead tr {
@@ -271,16 +313,22 @@ button {
   color: white;
   text-align: left;
   font-weight: bold;
+  border-radius: 10px 10px 0 0; /* Add border radius to thead */
 }
 
 .table th,
 .table td {
   padding: 12px 15px;
-  border: 1px solid #ddd;
+  /* border: 2px solid white; */
+  font-size: 16px;
+}
+
+.table tbody {
+  border-radius: 0 0 10px 10px; /* Add border radius to tbody */
 }
 
 .table tbody tr {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 3px solid #f3f3f3;
 }
 
 .table tbody tr:nth-of-type(even) {
@@ -296,6 +344,11 @@ button {
   color: white;
 }
 
+.table thead,
+.table tbody {
+  border: none;
+}
+
 .sort-button {
   background: none;
   border: none;
@@ -307,7 +360,7 @@ button {
 /* ================================
    Table Controls
    ================================ */
-.table-controls {
+.table__controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -326,10 +379,17 @@ button {
   border: 1px solid #5e6f21;
 }
 
+.search-bar {
+  width: 20%;
+  height: 40px;
+}
+
 .search-bar input {
   padding: 5px;
   border-radius: 5px;
   border: 1px solid #5e6f21;
+  width: 100%;
+  height: 100%;
 }
 
 /* ================================

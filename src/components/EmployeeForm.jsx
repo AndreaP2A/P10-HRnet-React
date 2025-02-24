@@ -68,7 +68,7 @@ const EmployeeForm = ({ onAddEmployee }) => {
   };
 
   return (
-    <div className="container">
+    <div className="create__employee--form">
       <h2>Create Employee</h2>
       <form className="form" id="create-employee">
         <TextInput

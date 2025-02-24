@@ -42,8 +42,8 @@ const DataTable = ({ columns, data }) => {
   });
 
   return (
-    <div>
-      <div className="table-controls">
+    <div className="table__container">
+      <div className="table__controls">
         <div className="entries-per-page">
           <label>
             Show{" "}

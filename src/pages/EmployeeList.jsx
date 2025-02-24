@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 import DataTable from "../components/DataTable";
 import columns from "../data/employeeColumns";
 import PropTypes from "prop-types";
@@ -12,9 +14,15 @@ const EmployeeList = () => {
   }, []);
 
   return (
-    <div className="container">
-      <h1>Current Employees</h1>
-      <DataTable columns={columns} data={employees} />
+    <div className="list__container">
+      <Link to="/" className="return__link">
+        <FaArrowLeft className="return__link--icon" />
+        <span>Return to the Create Employee Form</span>
+      </Link>
+      <div className="list__main">
+        <h1>Current Employees</h1>
+        <DataTable columns={columns} data={employees} />
+      </div>
     </div>
   );
 };

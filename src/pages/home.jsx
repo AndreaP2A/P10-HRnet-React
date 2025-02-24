@@ -13,11 +13,11 @@ import PropTypes from "prop-types";
  */
 const Home = ({ onAddEmployee }) => {
   return (
-    <div>
+    <div className="home__container">
       <div className="title">
         <h1>HRnet</h1>
       </div>
-      <div className="main">
+      <div className="home__main">
         <Link to="/employee-list">View Current Employees</Link>
         <EmployeeForm onAddEmployee={onAddEmployee} />
       </div>
