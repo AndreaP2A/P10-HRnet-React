@@ -3,6 +3,21 @@ import PropTypes from "prop-types";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/style.css";
 
+/**
+ * MyDatePicker component renders a date picker input field with a label.
+ * It allows users to select a date within a specified range and handles
+ * date selection and outside click events.
+ *
+ * @param {Object} props - The component props.
+ * @param {string} props.label - The label for the date picker input.
+ * @param {Date} props.selectedDate - The initially selected date.
+ * @param {function} props.onDateChange - Callback function to handle date changes.
+ * @param {Date} [props.minDate] - The minimum selectable date.
+ * @param {Date} [props.maxDate] - The maximum selectable date.
+ * @param {Date} [props.defaultMonth] - The default month to display in the date picker.
+ *
+ * @returns {JSX.Element} The rendered date picker component.
+ */
 export function MyDatePicker({
   label,
   selectedDate,

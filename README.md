@@ -19,25 +19,25 @@ Ce projet m'a amené à travailler sur :
 
 Vous souhaitez tester HRnet ? Il vous suffit de :
 
-1. **Clone the repository**:
+1. **Cloner the repository**:
 
 ```sh
 git clone https://github.com/AndreaP2A/P10-HRnet-React.git
 ```
 
-2. **Navigate to the project directory**
+2. **Vous rendre dans le dossier du projet**
 
 ```sh
 cd P10-HRnet-React
 ```
 
-3. **Install the dependencies (modal-window-ap2a is included)**
+3. **Installer les dépendances (modal-window-ap2a inclue)**
 
 ```sh
 npm install
 ```
 
-4. **Start the development server**
+4. **Démarrer le serveur**
 
 ```sh
 npm run dev
@@ -53,7 +53,7 @@ npm run dev
 
 ## modal-window-ap2a
 
-Le composant et package que j'ai choisi de développer en React étant la fenêtre modale, vous pouvez le retrouver sur la [librairie npm](https://www.npmjs.com/package/modal-window-ap2a) et son [repo GitHub](https://github.com/AndreaP2A/P10-HRnet-modal-window-component).
+Le composant et package que j'ai choisi de développer en React étant la fenêtre modale, vous pouvez le retrouver ainsi que toute information complémentaire sur la [librairie npm](https://www.npmjs.com/package/modal-window-ap2a) et son [repo GitHub](https://github.com/AndreaP2A/P10-HRnet-modal-window-component).
 
 Pour l'installer rapidement, il vous suffira d'ouvrir votre terminal et d'entrer :
 

@@ -3,6 +3,9 @@
 @import "@radix-ui/colors/violet.css";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
+/* ================================
+   Global Styles
+   ================================ */
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +16,9 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* ================================
+   Title
+   ================================ */
 .title {
   display: flex;
   align-items: center;
@@ -20,6 +26,10 @@ body {
   padding: 20px;
 }
 
+/* ================================
+   Container
+   ================================ */
+.main,
 .container {
   display: flex;
   flex-direction: column;
@@ -30,7 +40,10 @@ body {
   border: none;
 }
 
-form {
+/* ================================
+   Form
+   ================================ */
+.form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,12 +57,12 @@ input {
   padding: 10px;
 }
 
-.form_inputs {
+.form__inputs {
   display: flex;
   flex-direction: column;
   width: 90%;
 }
-.form_inputs input {
+.form__inputs input {
   width: 100%;
 }
 
@@ -60,7 +73,10 @@ label {
   margin-bottom: 10px;
 }
 
-.address {
+/* ================================
+   Address
+   ================================ */
+.form__address {
   display: flex;
   flex-direction: column;
   margin-top: 1.2rem;
@@ -68,6 +84,9 @@ label {
   width: 90%;
 }
 
+/* ================================
+   Datepicker
+   ================================ */
 .datepicker-overlay {
   position: absolute;
   z-index: 1000;
@@ -104,10 +123,23 @@ label {
   font-style: italic;
 }
 
-.save_btn {
+/* ================================
+   Save Button
+   ================================ */
+.save__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 280px;
+  padding: 10px;
+}
+
+.save__container--btn {
   display: flex;
   justify-content: center;
-  width: 90%;
+  cursor: pointer;
+  width: 100%;
   padding: 8px 0;
   border-radius: 5px;
   background-color: #5e6f21;
@@ -115,11 +147,19 @@ label {
   font-weight: 700;
 }
 
-/*///////////////////////////////////////////////////
-//////////////////// SELECT /////////////////////////
-///////////////////////////////////////////////////*/
+.save__container--btn:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
 
-/* reset */
+.save__container--error {
+  color: red;
+  text-align: center;
+}
+
+/* ================================
+   Select Menu
+   ================================ */
 button {
   all: unset;
 }
@@ -137,7 +177,6 @@ button {
   background-color: white;
   color: #5e6f21;
   border: 1px solid #5e6f21;
-  /* box-shadow: 0 2px 10px var(--black-a7); */
 }
 .SelectTrigger:hover {
   background-color: #98ac3b;
@@ -216,76 +255,9 @@ button {
   cursor: default;
 }
 
-/*///////////////////////////////////////////////////
-//////////////////// TABLE /////////////////////////
-///////////////////////////////////////////////////*/
-
-/* Table Styles */
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 18px;
-  text-align: left;
-}
-
-.table thead tr {
-  background-color: #5e6f21;
-  color: white;
-  text-align: left;
-  font-weight: bold;
-}
-
-.table th,
-.table td {
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-}
-
-.table tbody tr {
-  border-bottom: 1px solid #ddd;
-}
-
-.table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.table tbody tr:last-of-type {
-  border-bottom: 2px solid #5e6f21;
-}
-
-.table tbody tr:hover {
-  background-color: #98ac3b;
-  color: white;
-}
-
-/* Table Controls */
-.table-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.entries-per-page {
-  display: flex;
-  align-items: center;
-}
-
-.entries-per-page select {
-  margin-left: 5px;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #5e6f21;
-}
-
-.search-bar input {
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #5e6f21;
-}
-
-/* Table Styles */
+/* ================================
+   Data Table
+   ================================ */
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -332,7 +304,37 @@ button {
   color: white;
 }
 
-/* Pagination */
+/* ================================
+   Table Controls
+   ================================ */
+.table-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.entries-per-page {
+  display: flex;
+  align-items: center;
+}
+
+.entries-per-page select {
+  margin-left: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #5e6f21;
+}
+
+.search-bar input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #5e6f21;
+}
+
+/* ================================
+   Pagination
+   ================================ */
 .pagination {
   display: flex;
   justify-content: space-between;
@@ -354,11 +356,9 @@ button {
   cursor: not-allowed;
 }
 
-/*///////////////////////////////////////////////////
-//////////////////// MODAL /////////////////////////
-///////////////////////////////////////////////////*/
-
-/* Modal Styles */
+/* ================================
+   Modal
+   ================================ */
 body .modal__overlay {
   position: fixed;
   top: 0;

@@ -9,6 +9,17 @@ import {
 import PropTypes from "prop-types";
 import "../index.css";
 
+/**
+ * SelectMenu component renders a customizable select dropdown using Radix UI components.
+ *
+ * @param {Object} props - The properties object.
+ * @param {Array} props.options - An array of option objects for the select menu.
+ * @param {string} props.placeholder - The placeholder text for the select input.
+ * @param {string} props.label - The label for the select menu.
+ * @param {function} props.onChange - The callback function to handle value changes.
+ *
+ * @returns {JSX.Element} The rendered SelectMenu component.
+ */
 const SelectMenu = ({ options, placeholder, label, onChange }) => (
   <Select.Root onValueChange={onChange}>
     <Select.Trigger className="SelectTrigger" aria-label={label}>

@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import TextInput from "./TextInput.jsx";
 import { MyDatePicker } from "./DatePicker.jsx";
 import SelectMenu from "./SelectMenu.jsx";
+import SaveButton from "./SaveButton.jsx";
 import statesUSA from "../data/statesUSA.js";
 import departments from "../data/departments.js";
 import PropTypes from "prop-types";
 import Modal from "modal-window-ap2a";
 
+/**
+ * EmployeeForm component allows users to create a new employee by filling out a form.
+ * It includes fields for personal information, address, and department.
+ * The form data is saved to localStorage and a callback function is called upon submission.
+ *
+ * @component
+ * @param {Object} props - The component props
+ * @param {Function} props.onAddEmployee - Callback function to handle the addition of a new employee
+ * @returns {JSX.Element} The rendered EmployeeForm component
+ */
 const EmployeeForm = ({ onAddEmployee }) => {
   const [showModal, setShowModal] = useState(false);
   const [dateOfBirth, setDateOfBirth] = useState(null);
@@ -19,6 +31,15 @@ const EmployeeForm = ({ onAddEmployee }) => {
     zipCode: "",
     department: "",
   });
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  useEffect(() => {
+    const isValid =
+      Object.values(formData).every((value) => value !== "") &&
+      dateOfBirth &&
+      startDate;
+    setIsFormValid(isValid);
+  }, [formData, dateOfBirth, startDate]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -49,32 +70,29 @@ const EmployeeForm = ({ onAddEmployee }) => {
   return (
     <div className="container">
       <h2>Create Employee</h2>
-      <form id="create-employee">
-        <div className="form_inputs">
-          <label htmlFor="first-name">First Name</label>
-          <input
-            type="text"
-            id="first-name"
-            name="firstName"
-            onChange={handleChange}
-          />
-        </div>
+      <form className="form" id="create-employee">
+        <TextInput
+          label="First Name"
+          id="first-name"
+          name="firstName"
+          onChange={handleChange}
+        />
 
-        <div className="form_inputs">
-          <label htmlFor="last-name">Last Name</label>
-          <input
-            type="text"
-            id="last-name"
-            name="lastName"
-            onChange={handleChange}
-          />
-        </div>
+        <TextInput
+          label="Last Name"
+          id="last-name"
+          name="lastName"
+          onChange={handleChange}
+        />
 
         <MyDatePicker
           label="Date of Birth"
           selectedDate={dateOfBirth}
           onDateChange={setDateOfBirth}
           maxDate={
+            new Date(new Date().setFullYear(new Date().getFullYear() - 18))
+          }
+          defaultMonth={
             new Date(new Date().setFullYear(new Date().getFullYear() - 18))
           }
         />
@@ -86,19 +104,21 @@ const EmployeeForm = ({ onAddEmployee }) => {
           maxDate={new Date()}
         />
 
-        <fieldset className="address">
+        <fieldset className="form__address">
           <legend>Address</legend>
 
-          <label htmlFor="street">Street</label>
-          <input
-            type="text"
+          <TextInput
+            label="Street"
             id="street"
             name="street"
             onChange={handleChange}
           />
-
-          <label htmlFor="city">City</label>
-          <input type="text" id="city" name="city" onChange={handleChange} />
+          <TextInput
+            label="City"
+            id="city"
+            name="city"
+            onChange={handleChange}
+          />
 
           <label htmlFor="state">State</label>
           <SelectMenu
@@ -108,16 +128,16 @@ const EmployeeForm = ({ onAddEmployee }) => {
             onChange={(value) => handleSelectChange("state", value)}
           />
 
-          <label htmlFor="zip-code">Zip Code</label>
-          <input
-            type="number"
+          <TextInput
+            label="Zip Code"
             id="zip-code"
             name="zipCode"
+            type="number"
             onChange={handleChange}
           />
         </fieldset>
 
-        <div className="form_inputs">
+        <div className="form__inputs">
           <label htmlFor="department">Department</label>
           <SelectMenu
             options={departments}
@@ -127,10 +147,7 @@ const EmployeeForm = ({ onAddEmployee }) => {
           />
         </div>
       </form>
-
-      <button onClick={handleSave} className="save_btn">
-        Save
-      </button>
+      <SaveButton onClick={handleSave} disabled={!isFormValid} />
 
       <Modal
         show={showModal}

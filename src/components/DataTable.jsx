@@ -9,17 +9,32 @@ import {
 import PropTypes from "prop-types";
 import { useState } from "react";
 
+/**
+ * DataTable component for displaying and managing tabular data with features like
+ * pagination, sorting, and global filtering.
+ *
+ * @param {Object[]} columns - Array of column definitions for the table.
+ * @param {Object[]} data - Array of data objects to be displayed in the table.
+ *
+ * @returns {JSX.Element} The rendered DataTable component.
+ */
 const DataTable = ({ columns, data }) => {
   const [globalFilter, setGlobalFilter] = useState("");
   const [pageSize, setPageSize] = useState(10);
+  const [pagination, setPagination] = useState({
+    pageIndex: 0,
+    pageSize: 10,
+  });
 
   const table = useReactTable({
     columns,
     data,
     state: {
       globalFilter,
+      pagination,
     },
     onGlobalFilterChange: setGlobalFilter,
+    onPaginationChange: setPagination,
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -34,7 +49,14 @@ const DataTable = ({ columns, data }) => {
             Show{" "}
             <select
               value={pageSize}
-              onChange={(e) => setPageSize(Number(e.target.value))}
+              onChange={(e) => {
+                const newSize = Number(e.target.value);
+                setPageSize(newSize);
+                setPagination((prev) => ({
+                  ...prev,
+                  pageSize: newSize,
+                }));
+              }}
             >
               {[10, 25, 50, 100].map((size) => (
                 <option key={size} value={size}>
