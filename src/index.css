@@ -359,7 +359,7 @@ button {
 ///////////////////////////////////////////////////*/
 
 /* Modal Styles */
-.modal-overlay {
+body .modal__overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -374,7 +374,7 @@ button {
   z-index: 1000;
 }
 
-.modal {
+body .modal__content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -386,9 +386,10 @@ button {
   width: 100%;
   text-align: center;
   gap: 20px;
+  position: relative;
 }
 
-.modal-close-btn {
+body .modal__close-btn {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -398,6 +399,24 @@ button {
   width: 20%;
 }
 
-.modal-close-btn:hover {
-  background-color: #98ac3b;
+body .modal__close-btn:hover,
+body .modal__close-btn-x:hover {
+  background: #98ac3b;
+}
+
+body .modal__close-btn-x {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 20px;
 }

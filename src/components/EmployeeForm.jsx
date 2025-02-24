@@ -132,7 +132,12 @@ const EmployeeForm = ({ onAddEmployee }) => {
         Save
       </button>
 
-      <Modal show={showModal} onClose={handleClose}>
+      <Modal
+        show={showModal}
+        onClose={handleClose}
+        closeButtonX={true}
+        closeButton={true}
+      >
         Employee Created !
       </Modal>
     </div>
