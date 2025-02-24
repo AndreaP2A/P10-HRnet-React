@@ -304,8 +304,8 @@ button {
   margin: 20px 0;
   font-size: 18px;
   text-align: left;
-  border-radius: 10px; /* Add border radius to the table */
-  overflow: hidden; /* Ensure the border radius is applied */
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .table thead tr {
@@ -313,18 +313,17 @@ button {
   color: white;
   text-align: left;
   font-weight: bold;
-  border-radius: 10px 10px 0 0; /* Add border radius to thead */
+  border-radius: 10px 10px 0 0;
 }
 
 .table th,
 .table td {
   padding: 12px 15px;
-  /* border: 2px solid white; */
   font-size: 16px;
 }
 
 .table tbody {
-  border-radius: 0 0 10px 10px; /* Add border radius to tbody */
+  border-radius: 0 0 10px 10px;
 }
 
 .table tbody tr {
