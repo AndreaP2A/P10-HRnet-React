@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import TextInput from "./TextInput.jsx";
 import { MyDatePicker } from "./DatePicker.jsx";
 import SelectMenu from "./SelectMenu.jsx";
@@ -7,6 +7,16 @@ import statesUSA from "../data/statesUSA.js";
 import departments from "../data/departments.js";
 import PropTypes from "prop-types";
 import Modal from "modal-window-ap2a";
+
+const initialFormData = {
+  firstName: "",
+  lastName: "",
+  street: "",
+  city: "",
+  state: "",
+  zipCode: "",
+  department: "",
+};
 
 /**
  * EmployeeForm component allows users to create a new employee by filling out a form.
@@ -22,16 +32,9 @@ const EmployeeForm = ({ onAddEmployee }) => {
   const [showModal, setShowModal] = useState(false);
   const [dateOfBirth, setDateOfBirth] = useState(null);
   const [startDate, setStartDate] = useState(null);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    street: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    department: "",
-  });
+  const [formData, setFormData] = useState(initialFormData);
   const [isFormValid, setIsFormValid] = useState(false);
+  const formRef = useRef(null);
 
   useEffect(() => {
     const isValid =
@@ -50,6 +53,15 @@ const EmployeeForm = ({ onAddEmployee }) => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const resetForm = () => {
+    setFormData(initialFormData);
+    setDateOfBirth(null);
+    setStartDate(null);
+    if (formRef.current) {
+      formRef.current.reset();
+    }
+  };
+
   const handleSave = () => {
     const newEmployee = {
       ...formData,
@@ -61,6 +73,7 @@ const EmployeeForm = ({ onAddEmployee }) => {
     localStorage.setItem("employees", JSON.stringify(employees));
     onAddEmployee(newEmployee);
     setShowModal(true);
+    resetForm();
   };
 
   const handleClose = () => {
@@ -70,11 +83,12 @@ const EmployeeForm = ({ onAddEmployee }) => {
   return (
     <div className="create__employee--form">
       <h2>Create Employee</h2>
-      <form className="form" id="create-employee">
+      <form className="form" id="create-employee" ref={formRef}>
         <TextInput
           label="First Name"
           id="first-name"
           name="firstName"
+          value={formData.firstName}
           onChange={handleChange}
         />
 
@@ -82,6 +96,7 @@ const EmployeeForm = ({ onAddEmployee }) => {
           label="Last Name"
           id="last-name"
           name="lastName"
+          value={formData.lastName}
           onChange={handleChange}
         />
 
@@ -111,12 +126,14 @@ const EmployeeForm = ({ onAddEmployee }) => {
             label="Street"
             id="street"
             name="street"
+            value={formData.street}
             onChange={handleChange}
           />
           <TextInput
             label="City"
             id="city"
             name="city"
+            value={formData.city}
             onChange={handleChange}
           />
 
@@ -125,6 +142,7 @@ const EmployeeForm = ({ onAddEmployee }) => {
             options={statesUSA}
             placeholder="Select a state"
             label="States"
+            value={formData.state}
             onChange={(value) => handleSelectChange("state", value)}
           />
 
@@ -133,6 +151,7 @@ const EmployeeForm = ({ onAddEmployee }) => {
             id="zip-code"
             name="zipCode"
             type="number"
+            value={formData.zipCode}
             onChange={handleChange}
           />
         </fieldset>
@@ -143,6 +162,7 @@ const EmployeeForm = ({ onAddEmployee }) => {
             options={departments}
             placeholder="Select a department"
             label="Departments"
+            value={formData.department}
             onChange={(value) => handleSelectChange("department", value)}
           />
         </div>

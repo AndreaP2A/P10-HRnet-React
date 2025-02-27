@@ -16,12 +16,13 @@ import "../index.css";
  * @param {Array} props.options - An array of option objects for the select menu.
  * @param {string} props.placeholder - The placeholder text for the select input.
  * @param {string} props.label - The label for the select menu.
+ * @param {string} props.value - The currently selected value.
  * @param {function} props.onChange - The callback function to handle value changes.
  *
  * @returns {JSX.Element} The rendered SelectMenu component.
  */
-const SelectMenu = ({ options, placeholder, label, onChange }) => (
-  <Select.Root onValueChange={onChange}>
+const SelectMenu = ({ options, placeholder, label, value, onChange }) => (
+  <Select.Root value={value} onValueChange={onChange}>
     <Select.Trigger className="SelectTrigger" aria-label={label}>
       <Select.Value placeholder={placeholder} />
       <Select.Icon className="SelectIcon">
@@ -82,6 +83,7 @@ SelectMenu.propTypes = {
   ).isRequired,
   placeholder: PropTypes.string,
   label: PropTypes.string.isRequired,
+  value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
 

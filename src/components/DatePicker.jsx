@@ -27,11 +27,9 @@ export function MyDatePicker({
   defaultMonth,
 }) {
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const [selected, setSelected] = useState(selectedDate);
   const datePickerRef = useRef(null);
 
   const handleDateSelect = (date) => {
-    setSelected(date);
     onDateChange(date);
     setShowDatePicker(false);
   };
@@ -66,7 +64,7 @@ export function MyDatePicker({
       <label>{label}</label>
       <input
         type="text"
-        value={selected ? selected.toLocaleDateString() : ""}
+        value={selectedDate ? selectedDate.toLocaleDateString() : ""}
         onFocus={() => setShowDatePicker(true)}
         readOnly
       />
@@ -74,14 +72,14 @@ export function MyDatePicker({
         <div className="datepicker-overlay">
           <DayPicker
             mode="single"
-            selected={selected}
+            selected={selectedDate}
             onSelect={handleDateSelect}
             disabled={disabledDays}
             captionLayout="dropdown"
             defaultMonth={defaultMonth}
             footer={
-              selected
-                ? `Selected: ${selected.toLocaleDateString()}`
+              selectedDate
+                ? `Selected: ${selectedDate.toLocaleDateString()}`
                 : "Pick a day."
             }
           />
