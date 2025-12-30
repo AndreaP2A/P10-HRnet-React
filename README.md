@@ -20,13 +20,13 @@
 **HRnet** est l'application interne de gestion des ressources humaines de **Wealth Health**, une grande entreprise financière. Ce projet marque la transition d'une architecture héritée sous jQuery vers un écosystème moderne basé sur React, visant à éliminer la dette technique et à améliorer la réutilisabilité des composants.
 
 📌 Présentation du Projet
-L'enjeu de cette refonte était de reconstruire entièrement l'application tout en conservant ses fonctionnalités critiques. Un aspect central du projet a consisté à isoler l'un des quatre plugins jQuery d'origine pour le transformer en un **composant React autonome**, publié ultérieurement sous forme de package **npm**.
+L'enjeu de cette refonte était de reconstruire entièrement l'application tout en conservant ses fonctionnalités critiques. L'aspect le plus structurant du projet a été de **concevoir et publier ma propre librairie React** afin de remplacer un plugin jQuery complexe par une solution moderne, performante et réutilisable.
 
 Cette modernisation permet non seulement une meilleure maintenance du code, mais aussi une optimisation significative des performances, validée par des analyses comparatives via **Lighthouse**.
 
 🎯 Objectifs techniques
-- **Migration Architecturelle** : Passage d'un flux impératif (jQuery) à un flux déclaratif (React).
-- **Développement de Librairie** : Création, documentation et publication du package `modal-window-ap2a` sur le registre npm.
+- **Migration Architecturale** : Passage d'un flux impératif (jQuery) à un flux déclaratif (React).
+- **Conception de Librairie** : Création, documentation et publication de mon package **[modal-window-ap2a](https://www.npmjs.com/package/modal-window-ap2a)** sur le registre npm.
 - **Gestion de Données** : Mise en place d'un système de gestion d'état robuste pour l'enregistrement et la consultation des employés.
 - **Modularité & Accessibilité** : Utilisation de primitives Radix UI et de solutions de gestion de tableaux complexes comme TanStack Table.
 
@@ -34,8 +34,8 @@ Cette modernisation permet non seulement une meilleure maintenance du code, mais
 📊 **Tableau de Données Interactif**
 Intégration de **TanStack Table** pour une gestion fluide des listes d'employés : recherche globale, tri multi-colonnes et pagination optimisée.
 
-⚡ **Composant npm Propriétaire**
-Utilisation de `modal-window-ap2a`, une fenêtre modale personnalisée développée spécifiquement pour ce projet et importée comme dépendance externe.
+⚡ **Librairie Personnelle sur npm**
+Utilisation de **[modal-window-ap2a](https://www.npmjs.com/package/modal-window-ap2a)**, une fenêtre modale que j'ai développée de A à Z en React pour répondre aux besoins spécifiques du projet tout en garantissant une extensibilité maximale.
 
 📅 **Saisie de Données Moderne**
 Remplacement des widgets jQuery UI par des composants React performants :
@@ -68,7 +68,7 @@ npm run dev
 ```
 L'application sera disponible sur [http://localhost:5173](http://localhost:5173).
 
-💡 **Astuce** : Pour en savoir plus sur la librairie de modale utilisée, consultez la documentation officielle sur [npm: modal-window-ap2a](https://www.npmjs.com/package/modal-window-ap2a).
+💡 **Astuce** : Ma librairie de modale est disponible publiquement ici : [npm: modal-window-ap2a](https://www.npmjs.com/package/modal-window-ap2a).
 
 🛠️ Structure du Projet
 ```text
