@@ -1,90 +1,97 @@
 <div align="center">
-    <img src="./src/assets/img/wealth_health_logo.png" alt="Logo Wealth Health">
-    <h3 align="center">HRnet - Wealth Health HR Internal App</h3>
-    <p align="center">HRnet est une application web interne de la firme Wealth Health qui permet la gestion des dossiers des employés. La version d'origine utilisait jQuery pour la totalité des plugins/composants dont l'application avait besoin : il m'a été donné pour tâche de moderniser HRnet en repartant de zéro avec React et de développer moi-même un des quatres plugins existants.</p>
+    <img src="./src/assets/img/wealth_health_logo.png" alt="Logo Wealth Health" width="120">
+    <h1 align="center">HRnet — Application de Gestion RH</h1>
+    <p align="center">
+        <strong>Refonte moderne d'une application interne : Transition de jQuery vers React</strong>
+    </p>
+
+    <p align="center">
+        <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+        <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+        <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Redux" />
+        <img src="https://img.shields.io/badge/TanStack%20Table-FF4154?style=for-the-badge&logo=react-table&logoColor=white" alt="TanStack Table" />
+        <img src="https://img.shields.io/badge/Radix%20UI-121212?style=for-the-badge&logo=radix-ui&logoColor=white" alt="Radix UI" />
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+    </p>
 </div>
 
-## Contexte du projet
+---
 
-HRnet est un projet fictif, constituant le 10ème projet pratique dans le cadre du cursus que je suis chez OpenClassrooms. Dans ce cadre, j'ai choisi de développer une fenêtre modale React customisable afin de remplacer l'ancien plugin jQuery.<br />
-Ce projet m'a amené à travailler sur :
+**HRnet** est l'application interne de gestion des ressources humaines de **Wealth Health**, une grande entreprise financière. Ce projet marque la transition d'une architecture héritée sous jQuery vers un écosystème moderne basé sur React, visant à éliminer la dette technique et à améliorer la réutilisabilité des composants.
 
-- La "conversion" d'un plugin jQuery en composant fonctionnel React
-- La refonte d'une application pour réduire la dette technique
-- La production de documentation technique pour une application React : ce readme and les commmentaires JSDoc dans le code devraient fournir toutes les informations nécessaires.
-- La résolution d'un problème ([issue GitHub](https://github.com/OpenClassrooms-Student-Center/P12_Front-end/issues/3)) soulevé en interne : production d'un CSS épuré permettant la customisation globale du composant avec exemples
-- L'analyse de la performance d'une application web via Lighthouse
+📌 Présentation du Projet
+L'enjeu de cette refonte était de reconstruire entièrement l'application tout en conservant ses fonctionnalités critiques. Un aspect central du projet a consisté à isoler l'un des quatre plugins jQuery d'origine pour le transformer en un **composant React autonome**, publié ultérieurement sous forme de package **npm**.
 
-## Installation
+Cette modernisation permet non seulement une meilleure maintenance du code, mais aussi une optimisation significative des performances, validée par des analyses comparatives via **Lighthouse**.
 
-Vous souhaitez tester HRnet ? Il vous suffit de :
+🎯 Objectifs techniques
+- **Migration Architecturelle** : Passage d'un flux impératif (jQuery) à un flux déclaratif (React).
+- **Développement de Librairie** : Création, documentation et publication du package `modal-window-ap2a` sur le registre npm.
+- **Gestion de Données** : Mise en place d'un système de gestion d'état robuste pour l'enregistrement et la consultation des employés.
+- **Modularité & Accessibilité** : Utilisation de primitives Radix UI et de solutions de gestion de tableaux complexes comme TanStack Table.
 
-1. **Cloner the repository**:
+✨ Fonctionnalités clés
+📊 **Tableau de Données Interactif**
+Intégration de **TanStack Table** pour une gestion fluide des listes d'employés : recherche globale, tri multi-colonnes et pagination optimisée.
 
+⚡ **Composant npm Propriétaire**
+Utilisation de `modal-window-ap2a`, une fenêtre modale personnalisée développée spécifiquement pour ce projet et importée comme dépendance externe.
+
+📅 **Saisie de Données Moderne**
+Remplacement des widgets jQuery UI par des composants React performants :
+- **DatePicker** : `react-day-picker` pour une sélection de dates intuitive.
+- **SelectMenu** : `radix-ui/react-select` pour des menus déroulants accessibles et stylisés.
+
+🚀 **Performance Optimisée**
+Gain notable de rapidité et de réactivité grâce à l'utilisation de **Vite** pour le build et une architecture de composants optimisée.
+
+🚀 Installation et Utilisation
+
+### Prérequis
+- **NodeJS** (Version 18.x ou supérieure recommandée)
+- **NPM**
+
+### Étape 1 : Cloner le projet
 ```sh
 git clone https://github.com/AndreaP2A/P10-HRnet-React.git
-```
-
-2. **Vous rendre dans le dossier du projet**
-
-```sh
 cd P10-HRnet-React
 ```
 
-3. **Installer les dépendances (modal-window-ap2a inclue)**
-
+### Étape 2 : Installer les dépendances
 ```sh
 npm install
 ```
 
-4. **Démarrer le serveur**
-
+### Étape 3 : Lancer l'application
 ```sh
 npm run dev
 ```
+L'application sera disponible sur [http://localhost:5173](http://localhost:5173).
 
-## Technologies utilisées
+💡 **Astuce** : Pour en savoir plus sur la librairie de modale utilisée, consultez la documentation officielle sur [npm: modal-window-ap2a](https://www.npmjs.com/package/modal-window-ap2a).
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
-
-## modal-window-ap2a
-
-Le composant et package que j'ai choisi de développer en React étant la fenêtre modale, vous pouvez le retrouver ainsi que toute information complémentaire sur la [librairie npm](https://www.npmjs.com/package/modal-window-ap2a) et son [repo GitHub](https://github.com/AndreaP2A/P10-HRnet-modal-window-component).
-
-Pour l'installer rapidement, il vous suffira d'ouvrir votre terminal et d'entrer :
-
-```sh
-npm install modal-window-ap2a
+🛠️ Structure du Projet
+```text
+.
+├── src/
+│   ├── assets/         # Images, icônes et styles globaux
+│   ├── components/     # Composants UI (Table, Form, Select, etc.)
+│   ├── data/           # Données simulées et constantes applicatives
+│   ├── pages/          # Vues principales (Home, Employee List)
+│   ├── routes/         # Configuration de la navigation avec React Router
+│   ├── services/       # Services API et logique métier
+│   ├── App.jsx         # Composant racine
+│   └── main.jsx        # Point d'entrée de l'application
+├── package.json        # Dépendances et scripts de build
+└── README.md           # Documentation principale
 ```
 
-Si vous souhaitez le mettre à jour :
+🎓 Contexte Pédagogique
+Ce projet est le **10ème projet pratique** du parcours **Développeur d'application JavaScript / React** chez **OpenClassrooms**. Il m'a permis de maîtriser la transformation de plugins legacy en bibliothèques modernes et de renforcer mes compétences en architecture logicielle pour le développement de composants réutilisables.
 
-```sh
-npm update modal-window-ap2a
-```
+👨‍💻 Auteur
+**Andréa PORCHE**
 
-## Les autres composants React importés
-
-- DataTable : [:atom_symbol: Tanstack Table](https://tanstack.com/table/latest) :arrow_right: remplace l'ancien [plugin de tableau de données](https://github.com/DataTables/DataTables)
-- SelectMenu : [:atom_symbol: Radix UI - Select](https://www.radix-ui.com/primitives/docs/components/select) remplace l'ancien [plugin de menu déroulant](https://github.com/jquery/jquery-ui/blob/master/ui/widgets/selectmenu.js)
-- DatePicker : [:atom_symbol: React DayPicker](https://daypicker.dev/) :arrow_right: remplace l'ancien [plugin de sélecteur de date](https://github.com/xdan/datetimepicker)
-
-## En tant qu'utilisateur d'HRnet, je dois pouvoir ...
-
-- Renseigner simplement un formulaire de création d'employé moderne et intuitif
-- Valider le formulaire en cliquant sur "Save" et avoir une fenêtre modale de confirmation qui s'affiche
-- Être redirigé vers la page listant les employés en cliquant sur le lien approprié
-- Consulter la liste des employés agencée dans un tableau avec pagination, barre de recherche et filtres
-
-## Liens utiles
-
-Lien du repo: [https://github.com/AndreaP2A/P10-HRnet-React](https://github.com/AndreaP2A/P10-HRnet-React)
-Lien forké du repo de l'application d'origine, utilisant jQuery: [https://github.com/AndreaP2A/P10-HRnet](https://github.com/AndreaP2A/P10-HRnet)
-
-## Contact
-
-andrea.porche2a@gmail.com
+- GitHub : [@AndreaP2A](https://github.com/AndreaP2A)
+- LinkedIn : [Andrea Porche](https://www.linkedin.com/in/andrea-porche-a0b4b12b5/)
+- Email : andrea.porche2a@gmail.com
