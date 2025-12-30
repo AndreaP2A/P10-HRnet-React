@@ -1,18 +1,16 @@
 <div align="center">
-    <img src="./src/assets/img/wealth_health_logo.png" alt="Logo Wealth Health" width="120">
-    <h1 align="center">HRnet — Application de Gestion RH</h1>
-    <p align="center">
-        <strong>Refonte moderne d'une application interne : Transition de jQuery vers React</strong>
-    </p>
+<img src="./src/assets/img/wealth_health_logo.png" alt="Logo Wealth Health" width="120">
+<h1>HRnet — Application de Gestion RH</h1>
+<p><strong>Refonte moderne d'une application interne : Transition de jQuery vers React</strong></p>
 
-    <p align="center">
-        <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
-        <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-        <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Redux" />
-        <img src="https://img.shields.io/badge/TanStack%20Table-FF4154?style=for-the-badge&logo=react-table&logoColor=white" alt="TanStack Table" />
-        <img src="https://img.shields.io/badge/Radix%20UI-121212?style=for-the-badge&logo=radix-ui&logoColor=white" alt="Radix UI" />
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
-    </p>
+<p align="center">
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+<img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Redux" />
+<img src="https://img.shields.io/badge/TanStack%20Table-FF4154?style=for-the-badge&logo=react-table&logoColor=white" alt="TanStack Table" />
+<img src="https://img.shields.io/badge/Radix%20UI-121212?style=for-the-badge&logo=radix-ui&logoColor=white" alt="Radix UI" />
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+</p>
 </div>
 
 ---
