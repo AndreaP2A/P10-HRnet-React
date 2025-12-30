@@ -29,18 +29,18 @@ Cette modernisation permet non seulement une meilleure maintenance du code, mais
 - **Modularité & Accessibilité** : Utilisation de primitives Radix UI et de solutions de gestion de tableaux complexes comme TanStack Table.
 
 ## ✨ Fonctionnalités clés
-📊 **Tableau de Données Interactif**
+### 📊 Tableau de Données Interactif
 Intégration de **TanStack Table** pour une gestion fluide des listes d'employés : recherche globale, tri multi-colonnes et pagination optimisée.
 
-⚡ **Librairie Personnelle sur npm**
+### ⚡ Librairie Personnelle sur npm
 Utilisation de **[modal-window-ap2a](https://www.npmjs.com/package/modal-window-ap2a)**, une fenêtre modale que j'ai développée de A à Z en React pour répondre aux besoins spécifiques du projet tout en garantissant une extensibilité maximale.
 
-📅 **Saisie de Données Moderne**
+### 📅 Saisie de Données Moderne
 Remplacement des widgets jQuery UI par des composants React performants :
 - **DatePicker** : `react-day-picker` pour une sélection de dates intuitive.
 - **SelectMenu** : `radix-ui/react-select` pour des menus déroulants accessibles et stylisés.
 
-🚀 **Performance Optimisée**
+### 🚀 Performance Optimisée
 Gain notable de rapidité et de réactivité grâce à l'utilisation de **Vite** pour le build et une architecture de composants optimisée.
 
 ## 🚀 Installation et Utilisation
