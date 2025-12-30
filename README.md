@@ -17,18 +17,18 @@
 
 **HRnet** est l'application interne de gestion des ressources humaines de **Wealth Health**, une grande entreprise financière. Ce projet marque la transition d'une architecture héritée sous jQuery vers un écosystème moderne basé sur React, visant à éliminer la dette technique et à améliorer la réutilisabilité des composants.
 
-📌 Présentation du Projet
+## 📌 Présentation du Projet
 L'enjeu de cette refonte était de reconstruire entièrement l'application tout en conservant ses fonctionnalités critiques. L'aspect le plus structurant du projet a été de **concevoir et publier ma propre librairie React** afin de remplacer un plugin jQuery complexe par une solution moderne, performante et réutilisable.
 
 Cette modernisation permet non seulement une meilleure maintenance du code, mais aussi une optimisation significative des performances, validée par des analyses comparatives via **Lighthouse**.
 
-🎯 Objectifs techniques
+## 🎯 Objectifs techniques
 - **Migration Architecturale** : Passage d'un flux impératif (jQuery) à un flux déclaratif (React).
 - **Conception de Librairie** : Création, documentation et publication de mon package **[modal-window-ap2a](https://www.npmjs.com/package/modal-window-ap2a)** sur le registre npm.
 - **Gestion de Données** : Mise en place d'un système de gestion d'état robuste pour l'enregistrement et la consultation des employés.
 - **Modularité & Accessibilité** : Utilisation de primitives Radix UI et de solutions de gestion de tableaux complexes comme TanStack Table.
 
-✨ Fonctionnalités clés
+## ✨ Fonctionnalités clés
 📊 **Tableau de Données Interactif**
 Intégration de **TanStack Table** pour une gestion fluide des listes d'employés : recherche globale, tri multi-colonnes et pagination optimisée.
 
@@ -43,7 +43,7 @@ Remplacement des widgets jQuery UI par des composants React performants :
 🚀 **Performance Optimisée**
 Gain notable de rapidité et de réactivité grâce à l'utilisation de **Vite** pour le build et une architecture de composants optimisée.
 
-🚀 Installation et Utilisation
+## 🚀 Installation et Utilisation
 
 ### Prérequis
 - **NodeJS** (Version 18.x ou supérieure recommandée)
@@ -68,7 +68,7 @@ L'application sera disponible sur [http://localhost:5173](http://localhost:5173)
 
 💡 **Astuce** : Ma librairie de modale est disponible publiquement ici : [npm: modal-window-ap2a](https://www.npmjs.com/package/modal-window-ap2a).
 
-🛠️ Structure du Projet
+## 🛠️ Structure du Projet
 ```text
 .
 ├── src/
@@ -84,10 +84,10 @@ L'application sera disponible sur [http://localhost:5173](http://localhost:5173)
 └── README.md           # Documentation principale
 ```
 
-🎓 Contexte Pédagogique
+## 🎓 Contexte Pédagogique
 Ce projet est le **10ème projet pratique** du parcours **Développeur d'application JavaScript / React** chez **OpenClassrooms**. Il m'a permis de maîtriser la transformation de plugins legacy en bibliothèques modernes et de renforcer mes compétences en architecture logicielle pour le développement de composants réutilisables.
 
-👨‍💻 Auteur
+## 👨‍💻 Auteur
 **Andréa PORCHE**
 
 - GitHub : [@AndreaP2A](https://github.com/AndreaP2A)
